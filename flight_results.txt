@@ -1,34 +1,44 @@
-Flight from MAN to JFK using Large narrow body:
-  Economy Seats: 150, Business Seats: 12, First Class Seats: 2
-  Income: £75636.00, Cost: £61716.48, Profit: £13919.52
-  Break-even Seats: 57, Load Factor: 91.11%, Profit Margin: 18.40%
-
-Flight from LGW to ORY using Medium narrow body:
-  Economy Seats: 120, Business Seats: 8, First Class Seats: 0
-  Income: £21600.00, Cost: £3328.00, Profit: £18272.00
-  Break-even Seats: 17, Load Factor: 80.00%, Profit Margin: 84.59%
-
-Flight from MAN to MAD using Medium wide body:
-  Economy Seats: 140, Business Seats: 18, First Class Seats: 6
-  Income: £58400.00, Cost: £11767.00, Profit: £46633.00
-  Break-even Seats: 14, Load Factor: 43.16%, Profit Margin: 79.85%
-
-Flight from LGW to AMS using Medium narrow body:
-  Economy Seats: 100, Business Seats: 6, First Class Seats: 0
-  Income: £14400.00, Cost: £3078.24, Profit: £11321.76
-  Break-even Seats: 18, Load Factor: 66.25%, Profit Margin: 78.62%
-
-Flight from MAN to ORY using Medium narrow body:
-  Economy Seats: 110, Business Seats: 7, First Class Seats: 0
-  Income: £17240.00, Cost: £5709.60, Profit: £11530.40
-  Break-even Seats: 32, Load Factor: 73.13%, Profit Margin: 66.88%
-
-Flight from MAN to AMS using Medium narrow body:
-  Economy Seats: 90, Business Seats: 5, First Class Seats: 0
-  Income: £11650.00, Cost: £3686.00, Profit: £7964.00
-  Break-even Seats: 25, Load Factor: 59.38%, Profit Margin: 68.36%
-
-Flight from LGW to CAI using Medium wide body:
-  Economy Seats: 180, Business Seats: 12, First Class Seats: 4
-  Income: £114400.00, Cost: £34241.20, Profit: £80158.80
-  Break-even Seats: 25, Load Factor: 51.58%, Profit Margin: 70.07%
+[
+  [
+    "Large narrow body",
+    "£75636.00",
+    "£61716.48",
+    "£13919.52"
+  ],
+  [
+    "Medium narrow body",
+    "£21600.00",
+    "£3328.00",
+    "£18272.00"
+  ],
+  [
+    "Medium wide body",
+    "£58400.00",
+    "£11767.00",
+    "£46633.00"
+  ],
+  [
+    "Medium narrow body",
+    "£14400.00",
+    "£3078.24",
+    "£11321.76"
+  ],
+  [
+    "Medium narrow body",
+    "£17240.00",
+    "£5709.60",
+    "£11530.40"
+  ],
+  [
+    "Medium narrow body",
+    "£11650.00",
+    "£3686.00",
+    "£7964.00"
+  ],
+  [
+    "Medium wide body",
+    "£114400.00",
+    "£34241.20",
+    "£80158.80"
+  ]
+]
