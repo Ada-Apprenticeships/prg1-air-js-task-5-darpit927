@@ -8,12 +8,11 @@ function readCsv(filename, delimiter = ",") {
     return fileContent
       .split("\n") // Split the file content by new lines
       .slice(1) // Skip the header row
-      .map(
-        (row) =>
-          row
-            .trim() // Trim whitespace from the row
-            .split(delimiter) // Split the row by the delimiter
-            .map((col) => col.trim()) // Trim whitespace from each column
+      .map((row) =>
+        row
+          .trim() // Trim whitespace from the row
+          .split(delimiter) // Split the row by the delimiter
+          .map((col) => col.trim()) // Trim whitespace from each column
       )
       .filter((row) => row.length > 1); // Filter out empty rows
   } catch (err) {
@@ -274,11 +273,22 @@ class FlightManager {
                   return;
                 }
 
-                // Resolve the user input
-                resolve({
-                  ukAirport: ukAirport.toUpperCase(),
-                  overseasAirport: overseasAirport.toUpperCase(),
-                  aircraftType: aircraftType.toUpperCase(),
+                rl.question("Enter the number of economy seats booked: ", (economySeats) => {
+                  const parsedSeats = parseInt(economySeats.trim(), 10);
+                  if (isNaN(parsedSeats) || parsedSeats < 0) {
+                    console.error("Invalid input. Please enter a valid number of economy seats.");
+                    rl.close();
+                    resolve(null);
+                    return;
+                  }
+
+                  // Resolve the user input
+                  resolve({
+                    ukAirport: ukAirport.toUpperCase(),
+                    overseasAirport: overseasAirport.toUpperCase(),
+                    aircraftType: aircraftType.toUpperCase(),
+                    economySeats: parsedSeats,
+                  });
                 });
               });
             }
@@ -318,7 +328,11 @@ class FlightManager {
 
     // If flight data is found in both valid and invalid lists
     if (validFlightData && invalidFlightData) {
-      const flight = new Flight(validFlightData);
+      // Update validFlightData with user-provided economy seats
+      const updatedFlightData = [...validFlightData];
+      updatedFlightData[3] = userInput.economySeats;
+
+      const flight = new Flight(updatedFlightData);
       const result = calculator.calculateProfit(flight);
 
       if (result && result.error) {
@@ -333,7 +347,11 @@ class FlightManager {
 
     // If flight is only in the valid flights list
     if (validFlightData) {
-      const flight = new Flight(validFlightData);
+      // Update validFlightData with user-provided economy seats
+      const updatedFlightData = [...validFlightData];
+      updatedFlightData[3] = userInput.economySeats;
+
+      const flight = new Flight(updatedFlightData);
       const result = calculator.calculateProfit(flight);
 
       if (result && result.error) {
